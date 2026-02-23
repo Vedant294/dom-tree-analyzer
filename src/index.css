@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 222 84% 5%;
+    --foreground: 220 13% 91%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 220 13% 91%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 220 13% 91%;
+
+    --primary: 200 100% 53%;
+    --primary-foreground: 222 84% 5%;
+
+    --secondary: 187 85% 53%;
+    --secondary-foreground: 222 84% 5%;
+
+    --muted: 215 20% 20%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 270 95% 75%;
+    --accent-foreground: 222 84% 5%;
+
+    --destructive: 0 91% 71%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 20% 18%;
+    --input: 215 20% 18%;
+    --ring: 200 100% 53%;
+
+    --radius: 0.875rem;
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 220 13% 91%;
+    --sidebar-primary: 200 100% 53%;
+    --sidebar-primary-foreground: 222 84% 5%;
+    --sidebar-accent: 270 95% 75%;
+    --sidebar-accent-foreground: 222 84% 5%;
+    --sidebar-border: 215 20% 18%;
+    --sidebar-ring: 200 100% 53%;
+
+    --neon-glow: 0 0 20px hsl(200 100% 53% / 0.4);
+    --neon-glow-accent: 0 0 20px hsl(270 95% 75% / 0.4);
+    --gradient-cta: linear-gradient(135deg, hsl(200 100% 53%), hsl(270 95% 75%));
+    --gradient-card: linear-gradient(135deg, hsl(222 47% 13% / 0.8), hsl(222 47% 9% / 0.8));
+    --glass-bg: hsl(222 47% 11% / 0.6);
+    --glass-border: hsl(215 20% 25% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .neon-glow {
+    box-shadow: var(--neon-glow);
+  }
+
+  .neon-glow-accent {
+    box-shadow: var(--neon-glow-accent);
+  }
+
+  .gradient-cta {
+    background: var(--gradient-cta);
+  }
+
+  .gradient-text {
+    background: var(--gradient-cta);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .neon-border {
+    border: 1px solid hsl(200 100% 53% / 0.3);
+    box-shadow: inset 0 0 20px hsl(200 100% 53% / 0.05), var(--neon-glow);
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(215 20% 25%) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(215 20% 30%);
+    border-radius: 3px;
+  }
+}
