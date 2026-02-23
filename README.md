@@ -1,93 +1,144 @@
-# DOM Tree Analyzer
+🌳 DOM Tree Analyzer
 
-A React-based application for analyzing and visualizing DOM tree structures with performance metrics and optimization suggestions.
+A powerful React + TypeScript based web application that allows users to analyze, visualize, and optimize DOM tree structures from HTML or JSX code.
 
-## Features
+This tool helps developers understand DOM complexity, detect performance issues, and visualize tree transformations such as binary tree conversion.
 
-- Parse HTML and JSX code
-- Visualize DOM tree structure
-- Analyze tree depth and complexity
-- Performance metrics and optimization reports
-- Binary tree conversion and visualization
+link : https://699bd9368c460ff3d65a8eb3--dom-analyzer.netlify.app/
 
-## Tech Stack
+📌 What This Application Does
 
-- React 18
-- TypeScript
-- Vite
-- Tailwind CSS
-- shadcn/ui components
-- React Router
-- Vitest for testing
+DOM Tree Analyzer helps developers:
 
-## Getting Started
+Parse raw HTML or JSX code
 
-### Prerequisites
+Convert code into a structured DOM Tree
 
-- Node.js (v18 or higher)
-- npm or bun
+Visualize the tree in an interactive format
 
-### Installation
+Measure tree depth and complexity
 
-```sh
-# Clone the repository
-git clone <YOUR_GIT_URL>
+Generate performance metrics
 
-# Navigate to the project directory
-cd dom
+Provide optimization suggestions
 
-# Install dependencies
-npm install
-# or
-bun install
-```
+Convert DOM tree into a Binary Tree representation
 
-### Development
+It is especially useful for:
 
-```sh
-# Start the development server
-npm run dev
-# or
-bun dev
-```
+Frontend developers
 
-The application will be available at `http://localhost:8080`
+React developers
 
-### Build
+Students learning DOM structure
 
-```sh
-# Build for production
-npm run build
+Performance optimization analysis
 
-# Preview production build
-npm run preview
-```
+🖼 Screenshots
 
-### Testing
+📌 Replace the image paths below with your actual screenshot paths.
 
-```sh
-# Run tests
-npm test
+1️⃣ Home Page / Code Input
 
-# Run tests in watch mode
-npm run test:watch
-```
+2️⃣ DOM Tree Visualization
 
-## Project Structure
+3️⃣ Performance Metrics Report
 
-```
-dom/
-├── src/
-│   ├── components/     # React components
-│   ├── pages/          # Page components
-│   ├── utils/          # Utility functions
-│   ├── workers/        # Web workers
-│   ├── types/          # TypeScript types
-│   └── hooks/          # Custom React hooks
-├── public/             # Static assets
-└── ...config files
-```
+4️⃣ Binary Tree Conversion View
 
-## License
+🚀 Features (Detailed)
+✅ 1. HTML & JSX Parsing
 
-MIT
+Accepts raw HTML
+
+Supports JSX structures
+
+Converts code into structured tree data
+
+Error handling for invalid syntax
+
+✅ 2. Interactive DOM Tree Visualization
+
+Expand / collapse nodes
+
+Highlight node depth
+
+Display element attributes
+
+Visual tree hierarchy
+
+✅ 3. Tree Depth & Complexity Analysis
+
+Calculates:
+
+Maximum depth
+
+Average depth
+
+Total nodes
+
+Leaf nodes
+
+Detects deeply nested structures
+
+✅ 4. Performance Metrics
+
+DOM complexity score
+
+Render cost estimation
+
+Optimization warnings
+
+Heavy nesting alerts
+
+✅ 5. Optimization Suggestions
+
+Examples:
+
+Reduce unnecessary div nesting
+
+Remove redundant wrapper elements
+
+Flatten deeply nested structures
+
+Suggest semantic HTML usage
+
+✅ 6. Binary Tree Conversion
+
+Converts DOM tree to binary representation
+
+Visualizes left-child / right-sibling model
+
+Useful for algorithm learning
+
+🛠 Tech Stack
+Technology	Purpose
+React 18	Frontend framework
+TypeScript	Type safety
+Vite	Build tool
+Tailwind CSS	Styling
+shadcn/ui	UI components
+React Router	Routing
+Vitest	Unit testing
+
+🧠 How It Works (High-Level Architecture)
+
+User pastes HTML/JSX code
+
+Parser converts code → AST / structured tree
+
+Tree is transformed into internal data structure
+
+Visualization engine renders tree recursively
+
+Metrics engine calculates:
+
+Depth
+
+Node count
+
+Complexity score
+
+Optimization module generates suggestions
+
+Optional binary tree transformation applied
