@@ -1,12 +1,18 @@
+// ============================================================
+// CodeInput.tsx — Code entry area with language selector
+// User pastes HTML/JSX/TSX here and triggers analysis
+// ============================================================
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import type { Language } from '../types/treeTypes';
 
 interface CodeInputProps {
-  onAnalyze: (code: string, language: Language) => void;
+  onAnalyze: (code: string, language: Language) => void; // Callback to Analyzer.tsx
   isLoading: boolean;
 }
 
+// Pre-built sample code for quick demo (HTML version)
 const SAMPLE_HTML = `<div class="app">
   <header>
     <nav>
@@ -35,6 +41,7 @@ const SAMPLE_HTML = `<div class="app">
   </footer>
 </div>`;
 
+// Pre-built sample code for quick demo (JSX version)
 const SAMPLE_JSX = `<div className="app">
   <header>
     <nav>
@@ -62,13 +69,15 @@ const SAMPLE_JSX = `<div className="app">
 
 const CodeInput: React.FC<CodeInputProps> = ({ onAnalyze, isLoading }) => {
   const [code, setCode] = useState('');
-  const [language, setLanguage] = useState<Language>('html');
+  const [language, setLanguage] = useState<Language>('html'); // Default language: HTML
 
+  // Passes code and selected language up to Analyzer.tsx
   const handleAnalyze = () => {
     if (!code.trim()) return;
     onAnalyze(code, language);
   };
 
+  // Loads the appropriate sample based on current language selection
   const loadSample = () => {
     setCode(language === 'html' ? SAMPLE_HTML : SAMPLE_JSX);
   };
@@ -85,6 +94,7 @@ const CodeInput: React.FC<CodeInputProps> = ({ onAnalyze, isLoading }) => {
       animate={{ opacity: 1, y: 0 }}
       className="glass-card rounded-lg p-6 space-y-4"
     >
+      {/* Header row: title + language toggle buttons */}
       <div className="flex items-center justify-between flex-wrap gap-3">
         <h2 className="text-lg font-semibold text-foreground">Code Input</h2>
         <div className="flex items-center gap-2">
@@ -105,6 +115,7 @@ const CodeInput: React.FC<CodeInputProps> = ({ onAnalyze, isLoading }) => {
         </div>
       </div>
 
+      {/* Code textarea — monospace font for readability */}
       <div className="relative">
         <textarea
           value={code}
@@ -116,6 +127,7 @@ const CodeInput: React.FC<CodeInputProps> = ({ onAnalyze, isLoading }) => {
         />
       </div>
 
+      {/* Action buttons: Analyze, Load Sample, Clear */}
       <div className="flex items-center gap-3 flex-wrap">
         <button
           onClick={handleAnalyze}

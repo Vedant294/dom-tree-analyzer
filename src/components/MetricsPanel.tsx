@@ -1,11 +1,17 @@
+// ============================================================
+// MetricsPanel.tsx — Displays DFS analysis results
+// Shows total nodes, max depth, average depth, deepest path
+// ============================================================
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import type { DFSResult } from '../types/treeTypes';
 
 interface MetricsPanelProps {
-  dfs: DFSResult;
+  dfs: DFSResult; // Result from dfsAnalyzer.ts
 }
 
+// Reusable card for a single metric value
 const MetricCard: React.FC<{ label: string; value: string | number; icon: string; delay: number }> = ({
   label,
   value,
@@ -30,12 +36,15 @@ const MetricsPanel: React.FC<MetricsPanelProps> = ({ dfs }) => {
   return (
     <div className="space-y-4">
       <h2 className="text-lg font-semibold text-foreground">Analysis Metrics</h2>
+
+      {/* Top 3 metric cards — staggered animation via delay prop */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <MetricCard label="Total Nodes" value={dfs.totalNodes} icon="🔢" delay={0} />
         <MetricCard label="Max Depth" value={dfs.maxDepth} icon="📏" delay={0.1} />
         <MetricCard label="Average Depth" value={dfs.averageDepth} icon="📊" delay={0.2} />
       </div>
 
+      {/* Deepest path — shows the tag chain from root to deepest node */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -49,6 +58,7 @@ const MetricsPanel: React.FC<MetricsPanelProps> = ({ dfs }) => {
               <span className="px-2 py-1 rounded-md bg-primary/10 text-primary text-sm font-mono">
                 &lt;{tag}&gt;
               </span>
+              {/* Arrow separator between tags */}
               {i < dfs.deepestPath.length - 1 && (
                 <span className="text-muted-foreground text-xs">→</span>
               )}
