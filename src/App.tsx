@@ -12,7 +12,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/dom-tree-analyzer">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/analyzer" element={<Analyzer />} />
