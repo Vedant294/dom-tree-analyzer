@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DOM Tree Analyzer</title>
+    <script>
+      // GitHub Pages SPA redirect trick
+      // Stores the current path in sessionStorage and redirects to index.html
+      var path = window.location.pathname;
+      var base = '/dom-tree-analyzer';
+      var route = path.replace(base, '') || '/';
+      sessionStorage.setItem('redirect', route);
+      window.location.replace(base + '/');
+    </script>
+  </head>
+  <body></body>
+</html>
