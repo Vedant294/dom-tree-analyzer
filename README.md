@@ -4,7 +4,7 @@ A powerful React + TypeScript based web application that allows users to analyze
 
 This tool helps developers understand DOM complexity, detect performance issues, and visualize tree transformations such as binary tree conversion.
 
-link : https://699bd9368c460ff3d65a8eb3--dom-analyzer.netlify.app/
+link : https://vedant294.github.io/dom-tree-analyzer/analyzer
 
 📌 What This Application Does
 
